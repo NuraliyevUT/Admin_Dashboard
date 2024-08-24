@@ -7,6 +7,7 @@ import Brands from "../pages/Brands";
 import Cities from "../pages/Cities";
 import Locations from "../pages/Locations";
 import Cars from "../pages/Cars";
+import Models from "../pages/Models";
 
 const Layout = () => {
   return (
@@ -22,6 +23,7 @@ const Layout = () => {
               <Route path="/cities" element={<Cities />} />
               <Route path="/locations" element={<Locations />} />
               <Route path="/cars" element={<Cars />} />
+              <Route path="/models" element={<Models />} />
 
             </Routes>
           </main>

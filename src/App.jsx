@@ -1,7 +1,6 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react";
 import Layout from "./components/Layout";
 import LoginPage from "./pages/LoginPage";
 import Settings from "./pages/Settings";
@@ -9,18 +8,12 @@ import Brands from "./pages/Brands";
 import Cities from "./pages/Cities";
 import Locations from "./pages/Locations";
 import Cars from "./pages/Cars";
+import Models from "./pages/Models";
 
 function App() {
-  const navigate = useNavigate();
 
-  // useEffect(() => {
   const token = localStorage.getItem("tokenxon");
-  //   if (token) {
-  //     navigate("/layout");
-  //   } else {
-  //     navigate("/");
-  //   }
-  // }, [navigate]);
+  
 
   return (
     <>
@@ -33,6 +26,7 @@ function App() {
           <Route path="/cities" element={<Cities />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/cars" element={<Cars />} />
+          <Route path="/models" element={<Models />} />
 
           {/* <Route path="*" element={<NotFoundPage />} /> Optional */}
           </Route>

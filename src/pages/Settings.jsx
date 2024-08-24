@@ -157,14 +157,13 @@ const Settings = () => {
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-semibold">Categories</h1>
-      <button
-        onClick={modalFunc}
-        className="mb-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-      >
-        Add a new item
-      </button>
+        <button
+          onClick={modalFunc}
+          className="mb-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        >
+          Add a new item
+        </button>
       </div>
-
 
       {openModal && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
@@ -228,8 +227,8 @@ const Settings = () => {
             <tr className="bg-gray-200">
               <th className="py-2 px-4 border-b text-left">Name (EN)</th>
               <th className="py-2 px-4 border-b text-left">Name (RU)</th>
-              <th className="py-2 px-4 border-b text-left">Actions</th>
               <th className="py-2 px-4 border-b text-left">Photo</th>
+              <th className="py-2 px-4 border-b text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -237,6 +236,13 @@ const Settings = () => {
               <tr key={index} className="hover:bg-gray-100">
                 <td className="py-2 px-4 border-b">{item?.name_en}</td>
                 <td className="py-2 px-4 border-b">{item?.name_ru}</td>
+                <td className="py-2 px-4 border-b">
+                  <img
+                    src={`https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/${item?.image_src}`}
+                    alt={item?.name_en}
+                    className="w-16 h-16 object-cover rounded-md"
+                  />
+                </td>
                 <td className="py-2 px-4 border-b">
                   <button
                     onClick={() => openEditModal(item)}
@@ -250,13 +256,6 @@ const Settings = () => {
                   >
                     Delete
                   </button>
-                </td>
-                <td className="py-2 px-4 border-b">
-                  <img
-                    src={`https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/${item?.image_src}`}
-                    alt={item?.name_en}
-                    className="w-16 h-16 object-cover rounded-md"
-                  />
                 </td>
               </tr>
             ))}

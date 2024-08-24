@@ -52,6 +52,14 @@ const Sidebar = () => {
               <span className="ml-2">Cars</span>
             </Link>
           </li>
+          <li className="mb-2">
+            <Link
+              to="/models"
+              className="flex items-center p-2 hover:bg-blue-700 rounded"
+            >
+              <span className="ml-2">Models</span>
+            </Link>
+          </li>
           {/* Add other links as needed */}
         </ul>
       </nav>

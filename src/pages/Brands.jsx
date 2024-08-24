@@ -204,15 +204,22 @@ const Brands = () => {
           <thead>
             <tr className="bg-gray-200">
               <th className="py-2 px-4 border-b text-left">Title</th>
-              <th className="py-2 px-4 border-b text-left">Actions</th>
               <th className="py-2 px-4 border-b text-left">Photo</th>
+              <th className="py-2 px-4 border-b text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
             {data?.map((item, index) => (
               <tr key={index} className="hover:bg-gray-100">
                 <td className="py-2 px-4 border-b">{item?.title}</td>
+                
                 <td className="py-2 px-4 border-b">
+                  <img
+                    src={`https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/${item?.image_src}`}
+                    alt={item?.name_en}
+                    className="w-16 h-16 object-cover rounded-md"
+                  />
+                </td><td className="py-2 px-4 border-b">
                   <button
                     onClick={() => openEditModal(item)}
                     className="px-2 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
@@ -225,13 +232,6 @@ const Brands = () => {
                   >
                     Delete
                   </button>
-                </td>
-                <td className="py-2 px-4 border-b">
-                  <img
-                    src={`https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/${item?.image_src}`}
-                    alt={item?.name_en}
-                    className="w-16 h-16 object-cover rounded-md"
-                  />
                 </td>
               </tr>
             ))}

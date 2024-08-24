@@ -229,15 +229,28 @@ const Locations = () => {
             <thead>
               <tr className="bg-gray-200">
                 <th className="py-2 px-4 border-b text-left">Name</th>
-                <th className="py-2 px-4 border-b text-left">Actions</th>
                 <th className="py-2 px-4 border-b text-left">Photo</th>
                 <th className="py-2 px-4 border-b text-left">Text</th>
+                <th className="py-2 px-4 border-b text-left">Actions</th>
               </tr>
             </thead>
             <tbody>
               {data?.map((item) => (
                 <tr key={item?.id} className="hover:bg-gray-100">
                   <td className="py-2 px-4 border-b">{item?.name}</td>
+                  
+                  <td className="py-2 px-4 border-b">
+                    <img
+                      src={
+                        item?.image_src
+                          ? `https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/${item?.image_src}`
+                          : "/path/to/fallback/image.jpg"
+                      }
+                      alt={item?.name}
+                      className="w-16 h-16 object-cover rounded-md"
+                    />
+                  </td>
+                  <td className="py-2 px-4 border-b">{item?.text}</td>
                   <td className="py-2 px-4 border-b">
                     <button
                       onClick={() => openEditModal(item)}
@@ -252,18 +265,6 @@ const Locations = () => {
                       Delete
                     </button>
                   </td>
-                  <td className="py-2 px-4 border-b">
-                    <img
-                      src={
-                        item?.image_src
-                          ? `https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/${item?.image_src}`
-                          : "/path/to/fallback/image.jpg"
-                      }
-                      alt={item?.name}
-                      className="w-16 h-16 object-cover rounded-md"
-                    />
-                  </td>
-                  <td className="py-2 px-4 border-b">{item?.text}</td>
                 </tr>
               ))}
             </tbody>
