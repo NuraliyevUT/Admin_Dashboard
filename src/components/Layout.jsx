@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import Settings from "../pages/Settings";
@@ -24,7 +24,6 @@ const Layout = () => {
               <Route path="/locations" element={<Locations />} />
               <Route path="/cars" element={<Cars />} />
               <Route path="/models" element={<Models />} />
-
             </Routes>
           </main>
         </div>
